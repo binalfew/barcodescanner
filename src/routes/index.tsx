@@ -4,8 +4,8 @@ import BarcodeScanner from "../components/BarcodeScanner";
 export default function IndexRoute() {
   const [scanResult, setScanResult] = useState<string | null>(null);
   const [isScannerOpen, setIsScannerOpen] = useState<boolean>(false);
-  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
-  const [barcodeDataURL, setBarcodeDataURL] = useState<string | null>(null);
+  // const [setModalIsOpen] = useState<boolean>(false);
+  // const [barcodeDataURL, setBarcodeDataURL] = useState<string | null>(null);
 
   const handleScan = (data: string) => {
     setScanResult(data);
@@ -19,14 +19,14 @@ export default function IndexRoute() {
     setIsScannerOpen(false);
   };
 
-  const handleOpenModal = () => {
-    setModalIsOpen(true);
-  };
+  // const handleOpenModal = () => {
+  //   setModalIsOpen(true);
+  // };
 
-  const handleCloseModal = (barcodeDataURL: string) => {
-    setModalIsOpen(false);
-    setBarcodeDataURL(barcodeDataURL);
-  };
+  // const handleCloseModal = (barcodeDataURL: string) => {
+  //   setModalIsOpen(false);
+  //   setBarcodeDataURL(barcodeDataURL);
+  // };
 
   return (
     <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
@@ -54,11 +54,11 @@ export default function IndexRoute() {
           </button> */}
         </div>
 
-        {barcodeDataURL && (
+        {/* {barcodeDataURL && (
           <div className="mt-4">
             <img src={barcodeDataURL} alt="Generated Barcode" />
           </div>
-        )}
+        )} */}
 
         {isScannerOpen && (
           <BarcodeScanner onScan={handleScan} onClose={handleCloseScanner} />
